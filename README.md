@@ -7,12 +7,6 @@ O **PROJETO-DASHBOARD** é uma aplicação interativa para visualização e aná
 ---
 
 
-## 🖼️ Demonstração
-
->
-> ![Exemplo de Dashboard](caminho/para/seu/print.png)
-
-
 ## 📁 Estrutura do Projeto
 
 ```
@@ -90,24 +84,6 @@ python run.py
 ```
 
 ```
-
 O dashboard será aberto automaticamente no seu navegador (geralmente em `http://localhost:8501`).
 
----
 
-
-
-
----
-
-## 🤝 Contribuição
-
-Contribuições são bem-vindas!  
-Abra uma issue ou envie um pull request para sugerir melhorias.
-
----
-
-## 📄 Licença
-
-Este projeto está sob a licença MIT.  
-Veja o arquivo LICENSE para mais detalhes.
