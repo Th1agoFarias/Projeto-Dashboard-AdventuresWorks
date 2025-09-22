@@ -39,7 +39,7 @@ Siga os passos abaixo para executar o projeto localmente.
 
 **1. Clone o Repositório:**
 ```bash
-git clone [URL_DO_SEU_REPOSITORIO_AQUI]
+git clone [https://github.com/Th1agoFarias/Projeto-Dashboard-AdventuresWorks.git]
 cd PROJETO-DASHBOARD
 ```
 
@@ -90,14 +90,7 @@ O dashboard será aberto automaticamente no seu navegador (geralmente em `http:/
 
 ---
 
-## 🧪 Testes
 
-Para rodar os testes automatizados:
-```bash
-PYTHONPATH=./src python -m unittest tests/teste_processamento.py
-```
-
----
 
 ## 🖼️ Demonstração
 
