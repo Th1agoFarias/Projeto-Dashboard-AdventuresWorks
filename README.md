@@ -40,7 +40,7 @@ Siga os passos abaixo para executar o projeto localmente.
 **1. Clone o Repositório:**
 ```bash
 git clone https://github.com/Th1agoFarias/Projeto-Dashboard-AdventuresWorks.git
-cd PROJETO-DASHBOARD
+cd Projeto-Dashboard-AdventuresWorks
 ```
 
 **2. Crie e Ative um Ambiente Virtual:**
