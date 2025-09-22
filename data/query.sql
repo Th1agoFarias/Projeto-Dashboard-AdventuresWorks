@@ -1,5 +1,5 @@
 SELECT 
-    h.OrderDate, -- ADICIONADO
+    h.OrderDate, 
     h.SalesOrderID,
     d.LineTotal AS TotalDue,
     sp.Name AS Region,
