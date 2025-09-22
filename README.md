@@ -6,6 +6,13 @@ O **PROJETO-DASHBOARD** é uma aplicação interativa para visualização e aná
 
 ---
 
+
+## 🖼️ Demonstração
+
+>
+> ![Exemplo de Dashboard](caminho/para/seu/print.png)
+
+
 ## 📁 Estrutura do Projeto
 
 ```
@@ -62,8 +69,8 @@ pip install -r requirements.txt
 **4. Configure as Variáveis de Ambiente:**
 Crie um arquivo chamado `.env` na raiz do projeto e preencha com as suas credenciais de acesso ao banco de dados:
 ```
-DB_HOST=localhost
-DB_PORT=5432
+DB_SERVER=localhost
+DB_PORT=1433
 DB_NAME=nome_do_banco
 DB_USER=seu_usuario
 DB_PASSWORD=sua_senha
@@ -81,9 +88,7 @@ Com o ambiente virtual ativado e o arquivo `.env` configurado, execute o dashboa
 ```bash
 python run.py
 ```
-Ou, se estiver usando Streamlit:
-```bash
-streamlit run.py
+
 ```
 
 O dashboard será aberto automaticamente no seu navegador (geralmente em `http://localhost:8501`).
@@ -92,10 +97,6 @@ O dashboard será aberto automaticamente no seu navegador (geralmente em `http:/
 
 
 
-## 🖼️ Demonstração
-
->
-> ![Exemplo de Dashboard](caminho/para/seu/print.png)
 
 ---
 
