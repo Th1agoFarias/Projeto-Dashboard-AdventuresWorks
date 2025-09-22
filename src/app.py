@@ -1,8 +1,8 @@
 import streamlit as st
 from dotenv import load_dotenv
 
-from utils.tranformacao import obter_produtos_unicos, obter_regioes_unicas, calcular_kpis, obter_vendas_por_produto, obter_vendas_ao_longo_do_tempo
-from visuals.charts import  criar_grafico_de_barras, criar_grafico_de_linhas
+from transformacao.transformacao import obter_produtos_unicos, obter_regioes_unicas, calcular_kpis, obter_vendas_por_produto, obter_vendas_ao_longo_do_tempo
+from visuals.graficos import criar_grafico_de_barras, criar_grafico_de_linhas
 from data.conexao import carregar_vendas_data
 
 

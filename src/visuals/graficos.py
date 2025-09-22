@@ -1,6 +1,5 @@
 import plotly.express as px
 
-# Cor primária para dar consistência aos gráficos
 COR_PRIMARIA = "#1f77b4"
 
 def criar_grafico_de_barras(dados):

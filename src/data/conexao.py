@@ -6,6 +6,8 @@ import streamlit as st
 
 load_dotenv()
 
+caminho_arquivo_sql = '../data/query.sql'
+
 def ler_query(caminho_arquivo: str) -> str:
     """Lê o conteúdo de um arquivo SQL e o retorna como uma string."""
     with open(caminho_arquivo, 'r') as file:
