@@ -1,10 +1,17 @@
 import streamlit as st
 from dotenv import load_dotenv
 
-from transformacao.transformacao import obter_produtos_unicos, obter_regioes_unicas, calcular_kpis, obter_vendas_por_produto, obter_vendas_ao_longo_do_tempo
-from visuals.graficos import criar_grafico_de_barras, criar_grafico_de_linhas
 from data.conexao import carregar_vendas_data
 
+from transformacao.transformacao import (
+    obter_produtos_unicos, obter_regioes_unicas, calcular_kpis,
+    obter_vendas_por_produto, obter_vendas_ao_longo_do_tempo, obter_vendas_por_regiao,
+    calcular_ticket_medio_por_regiao
+
+)
+from visuals.graficos import (
+    criar_grafico_de_barras, criar_grafico_de_linhas, criar_grafico_de_barras_regiao,criar_grafico_de_barras_por_regiao
+    )
 
 # --- Configuração da Página e Estilo ---
 def configurar_pagina():
@@ -52,16 +59,26 @@ def exibir_graficos(df):
     st.header("Análises Visuais")
     col1, col2 = st.columns(2)
     with col1:
-        st.subheader("Vendas por Produto")
-        vendas_por_produto = obter_vendas_por_produto(df)
+        # Gráfico de produtos
+        vendas_por_produto = obter_vendas_por_produto(df, top_n=10)
         fig_barras = criar_grafico_de_barras(vendas_por_produto)
-        st.plotly_chart(fig_barras, width='stretch')
+        st.plotly_chart(fig_barras, use_container_width=True)
 
+        # Gráfico de regiões
+        vendas_por_regiao = obter_vendas_por_regiao(df)
+        fig_regiao = criar_grafico_de_barras_regiao(vendas_por_regiao)
+        st.plotly_chart(fig_regiao, use_container_width=True)
+        
     with col2:
-        st.subheader("Evolução das Vendas no Tempo")
+        # Gráfico de evolução de vendas
         vendas_ao_longo_tempo = obter_vendas_ao_longo_do_tempo(df)
         fig_linhas = criar_grafico_de_linhas(vendas_ao_longo_tempo)
-        st.plotly_chart(fig_linhas, width='stretch')
+        st.plotly_chart(fig_linhas, use_container_width=True)
+
+        # Gráfico de ticket médio por região
+        ticket_medio_por_regiao = calcular_ticket_medio_por_regiao(df)
+        fig_ticket_medio = criar_grafico_de_barras_por_regiao(ticket_medio_por_regiao)
+        st.plotly_chart(fig_ticket_medio, use_container_width=True)
 
 def main(): 
     load_dotenv()
@@ -104,7 +121,7 @@ def main():
         exibir_graficos(df_filtrado)
         st.markdown("<br>", unsafe_allow_html=True)
         st.header("Dados Detalhados")
-        st.dataframe(df_filtrado, width='stretch') 
+        st.dataframe(df_filtrado)
 
 if __name__ == "__main__":
     main() 

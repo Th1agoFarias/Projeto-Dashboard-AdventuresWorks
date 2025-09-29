@@ -69,3 +69,31 @@ def obter_vendas_ao_longo_do_tempo(df: pd.DataFrame) -> pd.DataFrame:
         .reset_index()
         .rename(columns={"OrderDate": "OrderDate"})
     )
+
+def obter_vendas_por_regiao(df: pd.DataFrame) -> pd.DataFrame:
+    """Retorna o ranking das regiões com mais vendas."""
+    if df.empty or "Region" not in df.columns:
+        return pd.DataFrame(columns=["Region", "TotalDue"])
+    return (
+        df.groupby("Region")["TotalDue"].sum()
+        .reset_index()
+        .sort_values("TotalDue", ascending=False)
+        .head(10)
+    )
+
+
+def calcular_ticket_medio_por_regiao(df: pd.DataFrame) -> pd.DataFrame:
+    """Calcula o ticket médio de vendas por região."""
+    if df.empty or "Region" not in df.columns or "SalesOrderID" not in df.columns or "TotalDue" not in df.columns:
+        return pd.DataFrame(columns=["Region", "Ticket Medio"])
+    agg_data = df.groupby("Region").agg(
+        VendasTotais=("TotalDue", "sum"),
+        PedidosUnicos=("SalesOrderID", "nunique")
+    ).reset_index().head(10)
+    
+
+    agg_data = agg_data[agg_data["PedidosUnicos"] > 0]
+
+    agg_data["TicketMedio"] = agg_data["VendasTotais"] / agg_data["PedidosUnicos"]
+    
+    return agg_data.sort_values("TicketMedio", ascending=False)
