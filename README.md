@@ -22,8 +22,6 @@ PROJETO-DASHBOARD/
 │   │   └── transformacao.py # Funções de processamento e KPIs.
 │   └── visuals/
 │       └── graficos.py    # Funções para criar os gráficos.
-├── tests/
-│   └── teste_processamento.py  # Script para testar as funções.
 ├── .env                        # Variáveis de ambiente.
 ├── .gitignore                  # Arquivos a serem ignorados.
 ├── requirements.txt            # Dependências do projeto.
