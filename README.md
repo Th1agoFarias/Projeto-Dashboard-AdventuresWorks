@@ -18,7 +18,7 @@ PROJETO-DASHBOARD/
 │   ├── app.py             # Interface principal do dashboard.
 │   ├── data/
 │   │   └── conexao.py     # Lógica de conexão com o banco.
-│   ├── utils/
+│   ├── transformacao/
 │   │   └── transformacao.py # Funções de processamento e KPIs.
 │   └── visuals/
 │       └── graficos.py    # Funções para criar os gráficos.
